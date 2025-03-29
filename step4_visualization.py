@@ -19,7 +19,7 @@ sns.scatterplot(
     s=100,
     alpha=0.8
 )
-plt.title("💎 RFM Müşteri Segmentasyonu (Recency vs Monetary)", fontsize=14)
+plt.title("RFM Müşteri Segmentasyonu (Recency vs Monetary)", fontsize=14)
 plt.xlabel("Recency (Son Alışveriş Gün Sayısı)")
 plt.ylabel("Monetary (Toplam Harcama)")
 plt.legend(title="Segment")
