@@ -3,14 +3,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
-# === Veriyi Yükle ===
+# data loading
 df = pd.read_csv("rfm_data.csv")
 
-# === Normalizasyon (StandardScaler) ===
+# normalizasyon
 scaler = StandardScaler()
 scaled_rfm = scaler.fit_transform(df[["Recency", "Frequency", "Monetary"]])
 
-# === Elbow Yöntemi ile Optimal K Seçimi ===
+# elbow
 sse = []
 k_range = range(1, 11)
 for k in k_range:
@@ -18,7 +18,7 @@ for k in k_range:
     kmeans.fit(scaled_rfm)
     sse.append(kmeans.inertia_)
 
-# === Elbow Grafiği ===
+# graph
 plt.figure(figsize=(8, 5))
 plt.plot(k_range, sse, marker='o')
 plt.xlabel("Number of Clusters (k)")
